@@ -1,40 +1,56 @@
 import React, { useState } from "react";
 import "./App.css";
+import DrugaKomp from "./DrugaKomp";
+import TeamCard from "./TeamCard/TeamCard";
 
-const DATA = [
 
-];
 
-export default function App() {
-  const [array, setArray] = useState(DATA);
 
-const generateNewWord = () => Math.random().toString(36).slice(2, 7);
 
-const reverseArray = () => {
 
-    //kopija niza
-    const _array = [...array];
-    const reversed = _array.reverse();
-    setArray(reversed);
-  }
 
-  return (
-    <div className="card-container">
-      <h4>Random recenice</h4>
-      <button onClick={() => setArray((prev) => [generateNewWord(),...prev])}>
-        Dodaj random recenicu
-      </button>
-      <button onClick={reverseArray}>REVERSE recenice</button>
-      <ul>
-        {array.map((el) => (
-          <li key={el}> {el}</li>
-        ))}
-        ;
-      </ul>
+
+
+
+
+
+
+
+// const DATA = [
+
+// ];
+
+// export default function App() {
+//   const [array, setArray] = useState(DATA);
+
+//   const generateNewWord = () => Math.random().toString(36).slice(2, 7);
+
+//   const reverseArray = () => {
+
+//     //kopija niza
+//     const _array = [...array];
+//     const reversed = _array.reverse();
+//     setArray(reversed);
+//   }
+
+//   return (
+//     <div className="card-container">
+//       <h4>Random recenice</h4>
+//       <button onClick={() => setArray((prev) => [generateNewWord(),...prev])}>
+//         Dodaj random recenicu
+//       </button>
+//       <button onClick={reverseArray}>REVERSE recenice</button>
+//       <ul>
+//         {array.map((el) => (
+//           <li key={el}> {el}</li>
+//         ))}
+//         ;
+//       </ul>
+//       <TeamCard />
      
-    </div>
-  );
-}
+//     </div>
+//   );
+// }
 
 // export default function App() {
 //   // const [name, setName] = React.useState("");
@@ -111,3 +127,7 @@ const reverseArray = () => {
 //     </div> */}
 //   );
 // }
+
+export default function App() {
+  return (<DrugaKomp />)
+}
