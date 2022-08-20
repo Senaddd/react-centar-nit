@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./App.css";
 import DrugaKomp from "./DrugaKomp";
 import TeamCard from "./TeamCard/TeamCard";
+import CryptoForm from "./CryptoForm/CrpytoForm";
+import TrecaKomp from "./CryptoForm/TrecaKomp"
 
 
 
@@ -129,5 +131,10 @@ import TeamCard from "./TeamCard/TeamCard";
 // }
 
 export default function App() {
-  return (<DrugaKomp />)
+  return (
+  <CryptoForm />
+
+  
+  )
+
 }
