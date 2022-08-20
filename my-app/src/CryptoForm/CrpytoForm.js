@@ -1,19 +1,19 @@
 import "./CryptoForm.css";
 import CryptoCard from "./TrecaKomp";
 
-const Crypto = [
-    { id: 0, name: "Ethereum", price: 1700 },
-  ];
 
-export default function CryptoForm(name,price) {
+
+
+const CryptoList = ({ name, value, deleteCrypto }) => {
   return (
-    <div classname="Crypto-Form">
-
-      <h2>CryptoListItem</h2>
-
-      <p ></p>
-      <p>{Crypto.price}</p>
-      <button>X</button>
+    <div className="crypto-list">
+      <p>{name}</p>
+      <p>${value}</p>
+      <button className="btn2" onClick={deleteCrypto}>
+        X
+      </button>
     </div>
   );
-}
+};
+
+export default CryptoList;

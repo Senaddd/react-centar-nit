@@ -1,27 +1,49 @@
 import React, { useState } from "react";
-import CryptoForm from "./CrpytoForm";
+import CryptoList from "./CrpytoForm";
+
+
+const Cryptolist = [
+  { id: 0, name: "Ethereum", value: 1700 },
+  { id: 1, name: "Bitcoin", value: 22000 },
+  { id: 2, name: "Cardano", value: 0.465},
+  { id: 3, name: "Dodgecoin", value: 0.071},
+];
+
+const CryptoForm = () => {
+    const [cryptoList, setCryptoList] = useState(CryptoList);
+    const [userData, setUserData] = useState({
+        name: "",
+        value: "",
+    })
+}
+
 
 
 
 export default function CryptoCard() {
-  const [crypto, setCrypto] = useState(Crypto);
+
+    const [crypto, setCryptoList] = useState(Cryptolist);
+
+  
+
 
   return (
     <div className="Crypto-border">
+    
+    <h1>   Crypto Form  </h1>
       <button
         onClick={() =>
-          setCrypto((prev) => [
+          setCryptoList((prev) => [
             ...prev,
-            { id: Math.random(), name: "Nova Valuta", price: 20000 },
-          ])
+            { id: Math.random(), name: "Nova Valuta", price: 300 },
+          ])    
         }
-      >$</button>
-       {crypto.map((crypt) => (
-        <div key={crypt.id}>
-          <CryptoForm
-            name={crypt.name}
-            points={crypt.price}
-          />
+      >
+        ADD
+      </button>
+      {crypto.map((e) => (
+        <div key={e.id}>
+          <CryptoList name={e.name} price={e.value  } />
         </div>
       ))}
     </div>

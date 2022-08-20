@@ -132,9 +132,7 @@ import TrecaKomp from "./CryptoForm/TrecaKomp"
 
 export default function App() {
   return (
-  <CryptoForm />
-
-  
+  <TrecaKomp />
   )
 
 }
