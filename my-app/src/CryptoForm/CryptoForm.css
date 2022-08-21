@@ -1,2 +1,23 @@
+.crypto-form {
+    display: flex;
+    justify-content: center ;
+}
+
+.clist {
+    display: flex;
+    justify-content: center;
+}
+
+.crypto-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px 20px;
+}
 
 
+.btn2{
+    background-color: black;
+    color: red;
+    display: block;
+    margin: 10px;
+}
