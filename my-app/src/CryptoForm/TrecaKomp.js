@@ -1,10 +1,8 @@
-
 import React, { useState } from "react";
 import CryptoList from "./CrpytoForm";
 
-
 const listOfCrypto = [
-  { id: 0, name: "Tether", value: 1.00 },
+  { id: 0, name: "Tether", value: 1.0 },
   { id: 1, name: "BNB", value: 1650 },
   { id: 2, name: "Cardano", value: 295.42 },
   { id: 3, name: "Dogecoin", value: 0.071 },
@@ -19,6 +17,7 @@ const CryptoForm = () => {
     name: "",
     value: "",
   });
+  
 
   const onAddCrypto = (event) => {
     event.preventDefault();
@@ -27,7 +26,7 @@ const CryptoForm = () => {
       {
         id: Math.random().toString(36).slice(2, 7),
         name: userData.name,
-        value: +userData.value,
+        value: userData.value,
       },
     ]);
     setUserData({
@@ -59,7 +58,7 @@ const CryptoForm = () => {
               name: event.target.value,
             }))
           }
-          ></input>
+        ></input>
 
         <label htmlFor="CryptoValue"></label>
         <input
@@ -85,7 +84,8 @@ const CryptoForm = () => {
       <h3 className="clist">Crypto Items</h3>
 
       {cryptoList.map((value) => (
-        <CryptoList className = "crypto-list"
+        <CryptoList
+          className="crypto-list"
           key={value.id}
           name={value.name}
           value={value.value}
@@ -98,17 +98,12 @@ const CryptoForm = () => {
 
 export default CryptoForm;
 
-
-
 // const Cryptolist = [
 //   { id: 0, name: "Ethereum", value: 1700 },
 //   { id: 1, name: "Bitcoin", value: 22000 },
 //   { id: 2, name: "Cardano", value: 0.465},
 //   { id: 3, name: "Dodgecoin", value: 0.071},
 // ];
-
-
-
 
 // export default function CryptoCard() {
 
@@ -140,21 +135,17 @@ export default CryptoForm;
 //     const newCryptoList = cryptoList.filter((value) => value.id !== id);
 //     setCryptoList(newCryptoList);
 //   };
-    
-
-  
-
 
 //   return (
 //     <div className="Crypto-border">
-    
+
 //     <h1>   Crypto Form  </h1>
 //       <button
 //         onClick={() =>
 //           setCryptoList((prev) => [
 //             ...prev,
 //             { id: Math.random(), name: "Nova Valuta", price: 300 },
-//           ])    
+//           ])
 //         }
 //       >
 //         ADD
