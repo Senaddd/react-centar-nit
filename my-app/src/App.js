@@ -135,7 +135,7 @@ import Weather from "./Weather/Weather";
 
 export default function App() {
   return (
-  <MyWeather />
+  <Weather />
   // <CryptoForm />
   )
 
