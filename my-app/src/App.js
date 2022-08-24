@@ -18,6 +18,7 @@ import TrecaKomp from "./CryptoForm/TrecaKomp"
 
 
 
+
 // const DATA = [
 
 // ];
@@ -133,6 +134,7 @@ import TrecaKomp from "./CryptoForm/TrecaKomp"
 export default function App() {
   return (
   <TrecaKomp />
+  // <CryptoForm />
   )
 
 }

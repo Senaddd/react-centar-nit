@@ -13,11 +13,12 @@ const listOfCrypto = [
 
 const CryptoForm = () => {
   const [cryptoList, setCryptoList] = useState(listOfCrypto);
+  const [showMore, setShowMore] = useState();
   const [userData, setUserData] = useState({
     name: "",
     value: "",
   });
-  
+
 
   const onAddCrypto = (event) => {
     event.preventDefault();
@@ -41,11 +42,12 @@ const CryptoForm = () => {
   };
 
   return (
-    <div>
-      <h1 className="clist  ">Crypto</h1>
+    <div className="background">
+      <h1 className="clist">Crypto</h1>
       <form className="crypto-form">
         <label htmlFor="CryptoName"></label>
         <input
+          className="name"
           type="text"
           name="CryptoName"
           id="CryptoName"
@@ -60,8 +62,9 @@ const CryptoForm = () => {
           }
         ></input>
 
-        <label htmlFor="CryptoValue"></label>
+        <label htmlFor="CryptoValue" className="crypto-values"></label>
         <input
+          className="name"
           type="number"
           name="CryptoValue"
           id="CryptoValue"
@@ -76,12 +79,12 @@ const CryptoForm = () => {
           }
         ></input>
 
-        <button className="btn1" type="submit" onClick={onAddCrypto}>
+        <button className="name" type="submit" onClick={onAddCrypto}>
           ADD
         </button>
       </form>
 
-      <h3 className="clist">Crypto Items</h3>
+      <h4 className="clist-2">Crypto List Items</h4>
 
       {cryptoList.map((value) => (
         <CryptoList
@@ -89,9 +92,19 @@ const CryptoForm = () => {
           key={value.id}
           name={value.name}
           value={value.value}
-          deleteCrypto={() => deleteCrypto(value.id)}
+          showMore={() =>
+            setShowMore((prevValue) => {
+              if (prevValue === value.id) {
+                return null;
+              } else {
+                return value.id;
+              }
+            })
+        }
+        deleteCrypto={() => deleteCrypto(value.id)}
+        showMoreDescription={showMore  === value.id}
         />
-      ))}
+        ))}
     </div>
   );
 };
