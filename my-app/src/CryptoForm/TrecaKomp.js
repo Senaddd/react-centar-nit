@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CryptoList from "./CrpytoForm";
 
 const listOfCrypto = [
-  { id: 0, name: "Tether", value: 1.0 },
+  { id: 0, name: "Tether", value: 1.0},
   { id: 1, name: "BNB", value: 1650 },
   { id: 2, name: "Cardano", value: 295.42 },
   { id: 3, name: "Dogecoin", value: 0.071 },
@@ -11,6 +11,8 @@ const listOfCrypto = [
   { id: 6, name: "Polkadot", value: 8.07 },
 ];
 
+
+
 const CryptoForm = () => {
   const [cryptoList, setCryptoList] = useState(listOfCrypto);
   const [showMore, setShowMore] = useState();
@@ -18,6 +20,9 @@ const CryptoForm = () => {
     name: "",
     value: "",
   });
+
+
+
 
 
   const onAddCrypto = (event) => {
@@ -86,23 +91,23 @@ const CryptoForm = () => {
 
       <h4 className="clist-2">Crypto List Items</h4>
 
-      {cryptoList.map((value) => (
+      {cryptoList.map((e) => (
         <CryptoList
           className="crypto-list"
-          key={value.id}
-          name={value.name}
-          value={value.value}
+          key={e.id}
+          name={e.name}
+          value={e.value}
           showMore={() =>
             setShowMore((prevValue) => {
-              if (prevValue === value.id) {
+              if(prevValue === e.id){  
                 return null;
               } else {
-                return value.id;
+                return e.id;
               }
             })
         }
-        deleteCrypto={() => deleteCrypto(value.id)}
-        showMoreDescription={showMore  === value.id}
+        deleteCrypto={() => deleteCrypto(e.id)}
+        showMoreDescription={showMore  === e.id}
         />
         ))}
     </div>

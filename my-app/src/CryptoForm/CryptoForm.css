@@ -1,32 +1,31 @@
-.crypto-form { 
+.crypto-form {
   display: flex;
   justify-content: center;
 }
 
 .background {
-    padding: 0px;
-    width: 100%;
-    height: 70rem;
-    background-size: cover;
-    background-image: url("https://thumbs.dreamstime.com/b/bitcoin-dark-background-ethereum-rise-fall-price-great-value-cryptocurrency-economy-market-trading-new-167332281.jpg");
+  padding: 0px;
+  width: 100%;
+  height: 70rem;
+  background-size: cover;
+  background-color: bisque;
+  /* background-image: url("https://thumbs.dreamstime.com/b/bitcoin-dark-background-ethereum-rise-fall-price-great-value-cryptocurrency-economy-market-trading-new-167332281.jpg"); */
 }
 
 .clist {
-    margin: 0;
-    padding: 30px;
-    color: violet;
-    font-size: 2.5rem;
-    display: flex;
-    justify-content: center;
+  margin: 0;
+  padding: 30px;
+  color: rgba(157, 0, 255, 0.985);
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
 }
-.clist-2{
-    font-size: 1.5rem;
-    color: violet;
-    display: flex;
-    justify-content: center;
-} 
-
-
+.clist-2 {
+  font-size: 1.5rem;
+  color: violet;
+  display: flex;
+  justify-content: center;
+}
 
 .crypto-list {
   display: flex;
@@ -37,20 +36,24 @@
 }
 
 .btn2 {
-  padding: 15px;  
+  padding: 15px;
   background-color: blueviolet;
   color: beige;
   display: block;
   margin: 10px;
 }
-.crypty {
-  display: flex;
-  justify-content: center;
-  padding: 5px;
+.crypto-more-info {
+  position: relative;
+  top: 20px;
 }
 .name {
-    border-radius: 25px;
-    padding: 10px;  
-    margin-right: 50px;
+  border-radius: 25px;
+  padding: 10px;
+  margin-right: 50px;
 }
 
+.crypto-info {
+    text-align: center;
+    margin: auto;
+    padding-bottom: 50px;
+}
