@@ -3,6 +3,13 @@ import "./Weather.css";
 
 const WeatherApp = () => {
   let [weather, setWeather] = useState(0);
+  let [description,setDescription] = useState(0);
+
+  function descriptionSet () {
+    setDescription((description = <p>hladno je</p>))
+
+  }
+    
   function updateWeather() {
     setWeather((weather = Math.floor(Math.random() * 50) - 20));
 
@@ -31,6 +38,10 @@ const WeatherApp = () => {
       <p>{weather}</p>
       <p>Kartica</p>
       <button onClick={() => updateWeather()}>Refresh temp</button>
+
+      <button onClick={() => descriptionSet()}>X</button>
+
+        <p>{description}</p>
     </div>
   );
 };
