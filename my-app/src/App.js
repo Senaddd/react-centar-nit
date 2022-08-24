@@ -4,6 +4,8 @@ import DrugaKomp from "./DrugaKomp";
 import TeamCard from "./TeamCard/TeamCard";
 import CryptoForm from "./CryptoForm/CrpytoForm";
 import TrecaKomp from "./CryptoForm/TrecaKomp"
+import MyWeather from "./Weather//MyWeather"
+import Weather from "./Weather/Weather";
 
 
 
@@ -133,7 +135,7 @@ import TrecaKomp from "./CryptoForm/TrecaKomp"
 
 export default function App() {
   return (
-  <TrecaKomp />
+  <MyWeather />
   // <CryptoForm />
   )
 

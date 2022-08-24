@@ -21,10 +21,6 @@ const CryptoForm = () => {
     value: "",
   });
 
-
-
-
-
   const onAddCrypto = (event) => {
     event.preventDefault();
     setCryptoList((prev) => [
@@ -107,7 +103,7 @@ const CryptoForm = () => {
             })
         }
         deleteCrypto={() => deleteCrypto(e.id)}
-        showMoreDescription={showMore  === e.id}
+        showMoreDescription={showMore === e.id}
         />
         ))}
     </div>

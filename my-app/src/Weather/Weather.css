@@ -1,0 +1,10 @@
+.kartica {
+    margin-top: 200px;
+    margin-left: 500px;
+    margin-right: 500px;
+    padding: 100px;
+    padding-left: 150px;
+    padding-right: 150px;
+    text-align: center;
+    border: 1px solid green;
+}
