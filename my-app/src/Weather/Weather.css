@@ -6,9 +6,13 @@
     padding-left: 150px;
     padding-right: 150px;
     text-align: center;
-    border: 1px solid green;
+    border: 1px solid rgb(82, 28, 19);
 }
 
 .btn{
     margin-left: 900px ;
+}
+
+.text-center {
+    text-align: center;
 }

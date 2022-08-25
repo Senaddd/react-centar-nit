@@ -1,10 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-import DrugaKomp from "./DrugaKomp";
-import TeamCard from "./TeamCard/TeamCard";
-import CryptoForm from "./CryptoForm/CrpytoForm";
-import TrecaKomp from "./CryptoForm/TrecaKomp"
-import MyWeather from "./Weather//MyWeather"
 import Weather from "./Weather/Weather";
 
 
