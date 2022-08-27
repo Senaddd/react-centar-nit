@@ -7,6 +7,7 @@ import TrecaKomp from "./CryptoForm/TrecaKomp";
 import MyWeather from "./Weather//MyWeather";
 import Weather from "./Weather/Weather";
 import PostList from "./PostList/PostList";
+import PostItem from "./PostList/PostItem";
 
 // const DATA = [
 
@@ -122,7 +123,8 @@ import PostList from "./PostList/PostList";
 
 export default function App() {
   return (
-    <PostList/>
+    <PostList />
+
     // <CryptoForm />
   );
 }

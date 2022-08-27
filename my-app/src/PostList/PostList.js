@@ -1,43 +1,39 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import PostItem from "./PostItem";
+import "./PostList.css";
 
 const PostList = (props) => {
   const [number, setNumber] = useState(0);
-  const [user, setUser] = useState({});
+  const [users, setUser] = useState([]);
 
-  const getUser = (title) => {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${title}`)
+  const getUser = (id) => {
+    fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
       .then((response) => response.json())
       .then((json) => {
-        console.log(json);
         setUser(json);
       });
   };
 
-
-
+  const randomNumber = () => {
+    setNumber(Math.floor(Math.random() * 100) - 0);
+  };
   useEffect(() => {
     getUser("");
   }, []);
 
   return (
     <div className="container">
-      <button
-        onClick={() => {
-          setNumber(Math.random());
-        }}
-      >
-        Press Me
-      </button>
-      {number}
-      {number}
-      <button
-        onClick={() => {
-          getUser("");
-        }}
-      >
-        Klikni mene
-      </button>
+      <h1>Posts List</h1>
+      {users.map((user) => {
+        return (
+          <p>
+            {user.title} , {user.body} ,
+          </p>
+        );
+      })}
+      <button onClick={() => randomNumber()}>{number}</button>
+      <h2>Post Item</h2>
     </div>
   );
 };
