@@ -35,8 +35,6 @@ const PostList = (props) => {
         //     {user.body} ,
         //   </p>
       })}
-      <button onClick={() => randomNumber()}>{number}</button>
-      <h2>Post Item</h2>
     </div>
   );
 };

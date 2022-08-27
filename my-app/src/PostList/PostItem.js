@@ -6,9 +6,7 @@ const PostItem = (user) => {
   return (
     <div className="title">
       <p>Title : {user.title}</p>
-      <div>
-        <p>Description : {user.description}</p>
-      </div>
+      <p>Description : {user.description}</p>
     </div>
   );
 };
