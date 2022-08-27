@@ -24,13 +24,20 @@ const PostList = (props) => {
 
   return (
     <div className="container">
-      <h1>Posts List</h1>
+      <h1>Post List</h1>
+      <h1>Posts Items</h1>
       {users.map((user) => {
         return (
-          <p>
-            {user.title} , {user.body} ,
-          </p>
+          <PostItem
+            key={user.id}
+            title={user.title}
+            description={user.description}
+          />
         );
+        //   <p className="description">
+        //     Title : {user.title} <br></br> <br></br> Description:
+        //     {user.body} ,
+        //   </p>
       })}
       <button onClick={() => randomNumber()}>{number}</button>
       <h2>Post Item</h2>
