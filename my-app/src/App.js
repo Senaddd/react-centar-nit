@@ -1,20 +1,12 @@
 import React, { useState } from "react";
 import "./App.css";
+import DrugaKomp from "./DrugaKomp";
+import TeamCard from "./TeamCard/TeamCard";
+import CryptoForm from "./CryptoForm/CrpytoForm";
+import TrecaKomp from "./CryptoForm/TrecaKomp";
+import MyWeather from "./Weather//MyWeather";
 import Weather from "./Weather/Weather";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import PostList from "./PostList/PostList";
 
 // const DATA = [
 
@@ -47,7 +39,7 @@ import Weather from "./Weather/Weather";
 //         ;
 //       </ul>
 //       <TeamCard />
-     
+
 //     </div>
 //   );
 // }
@@ -130,8 +122,7 @@ import Weather from "./Weather/Weather";
 
 export default function App() {
   return (
-  <Weather />
-  // <CryptoForm />
-  )
-
+    <PostList/>
+    // <CryptoForm />
+  );
 }

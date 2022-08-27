@@ -4,7 +4,6 @@ import WeatherDescription from "./Weather";
 
 const WeatherApp = () => {
   const [weather, setWeather] = useState(0);
-  const [background, changeBackground] = useState(0);
   const [hint, setHint] = useState("");
 
   const updateWeather = () => {
@@ -48,9 +47,7 @@ const WeatherApp = () => {
         <p>Kartica</p>
         <button onClick={() => updateWeather()}>Refresh temp</button>
       </div>
-      <div className="text-center">
-        {hint}
-      </div>
+      <div className="text-center">{hint}</div>
     </>
   );
 };
