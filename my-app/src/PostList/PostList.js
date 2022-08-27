@@ -28,11 +28,7 @@ const PostList = (props) => {
       <h1>Posts Items</h1>
       {users.map((user) => {
         return (
-          <PostItem
-            key={user.id}
-            title={user.title}
-            description={user.description}
-          />
+          <PostItem key={user.id} title={user.title} description={user.body} />
         );
         //   <p className="description">
         //     Title : {user.title} <br></br> <br></br> Description:
