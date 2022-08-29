@@ -6,33 +6,47 @@ const BASE_URL = "https://api.quotable.io";
 
 export default function App() {
   const [authors, setAuthors] = useState([]);
-  const [page, setPages] = useState(0);
-
-  function pagess() {
-    setPages(page + 1);
-  }
+  const [loading, setLoading] = useState(true);
+  const [pagination, setPagination] = useState({});
+  const [page, setPage] = useState(1);
 
   function getAuthors(page) {
-    axios
-      .get(`${BASE_URL}/authors?sortBy=quoteCount&page=${page}`)
-
-      .then((res) => setAuthors(res.data.results));
+    setLoading(true);
+    try {
+      axios
+        .get(`${BASE_URL}/authors?sortBy=quoteCount&page=${page}&limit=15`)
+        .then((res) => {
+          console.log(res.data);
+          setPagination({
+            page: res.data.page,
+            lastPage: res.data.totalPages,
+          });
+          setAuthors(res.data.results);
+        });
+    } catch (e) {
+      console.log(e);
+    } finally {
+      setLoading(false);
+    }
   }
+
   useEffect(() => {
     getAuthors(page);
   }, [page]);
+
   return (
     <div className="card-container">
-      <button onClick={() => pagess()}>NextPage {page} / 100</button>
-
-      {authors.length > 0 ? (
+      Page {pagination.page} / {pagination.lastPage}
+      <button onClick={() => setPage((prev) => prev + 1)}>Next page </button>
+      {!loading ? (
         <div>
           {authors.map((author) => (
-            <div key={author.id}>
+            <div key={author._id}>
               <h4>{author.name}</h4>
               <h5>{author.description}</h5>
               <p>{author.bio}</p>
-              <p> Quote count : {author.quoteCount}</p>
+              <p>Quoute count: {author.quoteCount}</p>
+              <hr />
             </div>
           ))}
         </div>
