@@ -6,17 +6,25 @@ const BASE_URL = "https://api.quotable.io";
 
 export default function App() {
   const [authors, setAuthors] = useState([]);
+  const [page, setPages] = useState(0);
 
-  function getAuthors() {
+  function pagess() {
+    setPages(page + 1);
+  }
+
+  function getAuthors(page) {
     axios
-      .get(`${BASE_URL}/authors?sortBy=quoteCount`)
+      .get(`${BASE_URL}/authors?sortBy=quoteCount&page=${page}`)
+
       .then((res) => setAuthors(res.data.results));
   }
   useEffect(() => {
-    getAuthors();
-  }, []);
+    getAuthors(page);
+  }, [page]);
   return (
     <div className="card-container">
+      <button onClick={() => pagess()}>NextPage {page} / 100</button>
+
       {authors.length > 0 ? (
         <div>
           {authors.map((author) => (
