@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import axios from "axios";
 
+import Mui from "./Mui";
+
 const BASE_URL = "https://api.quotable.io";
 
 export default function App() {
@@ -36,6 +38,7 @@ export default function App() {
 
   return (
     <div className="card-container">
+      <Mui />
       Page {pagination.page} / {pagination.lastPage}
       <button onClick={() => setPage((prev) => prev + 1)}>Next page </button>
       {!loading ? (
