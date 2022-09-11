@@ -66,6 +66,7 @@ import BottomNavigation from "@mui/material/BottomNavigation";
 import { Routes, Route, Link, NavLink } from "react-router-dom";
 import HomePage from "./Pages/Homepage/Homepage";
 import TeamPage from "./Pages/Teampage/Teampage";
+import About from "./Pages/Aboutpage/About";
 
 export default function App() {
   let activeStyle = {
@@ -102,7 +103,7 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="about" element={<h1>ABOUT PAGE</h1>} />
+        <Route path="about" element={<About />} />
         <Route path="team" element={<TeamPage />} />
       </Routes>
     </div>
